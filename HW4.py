@@ -1,16 +1,17 @@
 import sympy 
 import random
-x=0
-x=sympy(("x"))
-print (sympy(x))
+x=sympy.symbols("x")
+print(x)
 print ("Введите степень")
 t = int(input())
-b=[]
 a=""
 for i in range(t):
-    c = int(random.uniform(0, 100))
+    c = random.randint(0, 100)
     expr=x**i
-    ##c = int(random.uniform(0, 100))*pow(x,t-i)
-    a=str(c)+str(expr)+a
-    b.append(a)
-print(b)
+    a=str(c)+str(expr)+"+"+a
+a=a[:-1]
+a=a+"=0"
+print(a)
+rec=open("file1.txt", "w")
+rec.write(a)
+rec.close()
